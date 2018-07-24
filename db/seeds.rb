@@ -38,43 +38,57 @@ orders = Order.create([
 LineItem.create(
     product_id: products[0].id, 
     order_id: orders[0].id, 
-    :qty => 1
+    :qty => 1,
+    :name => products[0].name,
+    :price => products[0].price
 )
 
 LineItem.create(
     product_id: products[1].id, 
     order_id: orders[0].id, 
-    :qty => 1
+    :qty => 1,
+    :name => products[1].name,
+    :price => products[1].price
 )
 
 LineItem.create(
     product_id: products[2].id, 
     order_id: orders[0].id, 
-    :qty => 2
+    :qty => 2,
+    :name => products[2].name,
+    :price => products[2].price
 )
 
 LineItem.create(
     product_id: products[2].id, 
     order_id: orders[1].id, 
-    :qty => 5
+    :qty => 5,
+    :name => products[2].name,
+    :price => products[2].price
 )
 
 LineItem.create(
     product_id: products[0].id, 
     order_id: orders[2].id, 
-    :qty => 2
+    :qty => 2,
+    :name => products[0].name,
+    :price => products[0].price
 )
 
 LineItem.create(
     product_id: products[1].id, 
     order_id: orders[2].id, 
-    :qty => 3
+    :qty => 3,
+    :name => products[1].name,
+    :price => products[1].price
 )
 
 LineItem.create(
     product_id: products[2].id, 
     order_id: orders[2].id, 
-    :qty => 1
+    :qty => 1,
+    :name => products[2].name,
+    :price => products[2].price
 )
 
 puts 'Seeding completed'

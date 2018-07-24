@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2018_07_24_163853) do
   enable_extension "plpgsql"
 
   create_table "line_items", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
     t.integer "qty"
     t.bigint "order_id"
     t.bigint "product_id"
