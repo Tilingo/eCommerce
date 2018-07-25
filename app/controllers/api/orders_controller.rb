@@ -27,10 +27,10 @@ class Api::OrdersController < ApplicationController
         render json: @order
     end
     
-    # def destroy
-    #     @product = Product.find(params[:id]).destroy
-    #     render status: :ok
-    # end
+    def destroy
+        @order = Order.find(params[:id]).destroy
+        render status: :ok
+    end
     
     private
     def order_params
