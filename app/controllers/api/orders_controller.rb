@@ -21,11 +21,11 @@ class Api::OrdersController < ApplicationController
         render json: @order
     end
     
-    # def update
-    #     @product = Product.find(params[:id])
-    #     @product.update!(product_params)
-    #     render json: @product
-    # end
+    def update
+        @order = Order.find(params[:id])
+        @order.update!(order_params)
+        render json: @order
+    end
     
     # def destroy
     #     @product = Product.find(params[:id]).destroy

@@ -28,7 +28,7 @@ orders = Order.create([
         status: 'OPEN'
     },
     {
-        status: 'CLOSED'
+        status: 'CLOSE'
     },
     {
         status: 'OPEN'
