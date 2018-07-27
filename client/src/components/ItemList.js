@@ -32,6 +32,8 @@ class ItemList extends Component {
             return (
                 <Item
                     key={i}
+                    id={item.id}
+                    orderId ={this.props.orderId}
                     name={item.name}
                     price={item.price}
                     qty={item.qty}

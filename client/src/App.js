@@ -68,7 +68,7 @@ class App extends Component {
       <Router>
         <div>
           <Navbar
-          orderId ={this.state.order.orderId} />
+            orderId={this.state.order.orderId} />
           <Switch>
             <Route exact path="/" render={this.homeComponent} />
             <Route path="/products/:id" render={this.singleProductComponent} />
