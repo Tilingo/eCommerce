@@ -5,9 +5,11 @@ Rails.application.routes.draw do
       resources :line_items
     end
     
+    get 'orders/last', to: 'orders#last_order'
     resources :orders do
       resources :line_items
     end
+
 
   end
 end

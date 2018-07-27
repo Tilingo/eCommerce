@@ -31,6 +31,11 @@ class Api::OrdersController < ApplicationController
         @order = Order.find(params[:id]).destroy
         render status: :ok
     end
+
+    def last_order
+        @order = Order.last
+        render json: @order
+    end
     
     private
     def order_params

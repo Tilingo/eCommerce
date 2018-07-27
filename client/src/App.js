@@ -9,7 +9,10 @@ class App extends Component {
 
   state = {
     cart: [],
-    isOpen: false
+    order: {
+      orderId: 0,
+      active: false
+    }
   }
 
   homeComponent = (props) => (
@@ -17,21 +20,37 @@ class App extends Component {
   )
 
   checkOrderStatus = async () => {
-    const res = await axios.get()
+    const res = await axios.get('/api/orders/last')
+
+    this.setState({
+      order: {
+        orderId: res.data.id,
+        active: res.data.active
+      }
+    })
   }
 
-  // addToCart = async () => {
+  addToCart = async (product_id) => {
+    const order_id = this.state.order.orderId
 
-  //   try {
-  //     // const res
+    if (this.state.order.active) {
+      try {
+        const res = await axios.post(`/api/products/${product_id}/line_items?order_id=${order_id}`)
+        console.log(res)
+      } catch (err) {
+        console.error(err)
+      }
+    }
+    else {
+      try {
+        const res = await axios.post(`/api/orders?product_id=${product_id}`)
+        console.log(res)
+      } catch (err) {
+        console.error(err)
+      }
+    }
 
-  //   } catch (err) {
-  //     console.error(err)
-  //   }
-
-  // }
-
-
+  }
 
   singleProductComponent = (props) => (
     <SingleProduct
