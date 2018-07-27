@@ -7,19 +7,19 @@ products = Product.create([
         name: 'Playstation 4',
         description: 'Very cool game console',
         price: 299,
-        photo_url: 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fstatic-ca.ebgames.ca%2Fimages%2Fproducts%2F710007%2F3max.jpg&imgrefurl=https%3A%2F%2Fwww.ebgames.ca%2FPS4%2FGames%2F713446&docid=UQRprvSL5y0qDM&tbnid=k0rbE7godaaE1M%3A&vet=10ahUKEwiJ-uzyqbjcAhWtVt8KHYJbCFcQMwiIAigDMAM..i&w=1000&h=1273&bih=780&biw=960&q=playstation%204&ved=0ahUKEwiJ-uzyqbjcAhWtVt8KHYJbCFcQMwiIAigDMAM&iact=mrc&uact=8'
+        photo_url: 'https://psmedia.playstation.com/is/image/psmedia/ps4-gold-screen-03-eu-30may17?$MediaCarousel_LargeImage$'
     },
     {
         name: 'Nintendo Switch',
         description: 'Very cool hybrid console',
         price: 299,
-        photo_url: 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.nintendo.com%2Fswitch%2FetRgxnAu0zRX4bmWnt9K628wG7YQUI6t%2Fimages%2Fswitch%2Fbuy-now%2Fbundle_color_console.jpg&imgrefurl=https%3A%2F%2Fwww.nintendo.com%2Fswitch%2Fbuy-now%2F&docid=mirr4lT0Xy17EM&tbnid=VGu-brBM-TaifM%3A&vet=10ahUKEwiSg96cqrjcAhVldt8KHU-LDLQQMwj7AigAMAA..i&w=554&h=369&bih=780&biw=960&q=nintendo%20switch&ved=0ahUKEwiSg96cqrjcAhVldt8KHU-LDLQQMwj7AigAMAA&iact=mrc&uact=8'
+        photo_url: 'https://www.nintendo.com/switch/etRgxnAu0zRX4bmWnt9K628wG7YQUI6t/images/switch/buy-now/bundle_color_console.jpg'
     },
     {
         name: 'Xbox',
         description: 'Its Ok',
         price: 299,
-        photo_url: 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F43%2FXbox-console.jpg%2F1200px-Xbox-console.jpg&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FXbox_(console)&docid=ur7Z8zXMpNfzVM&tbnid=k5mzfBJD0M7jaM%3A&vet=10ahUKEwjo2u6MrLjcAhXPxVkKHUmICCMQMwieAigGMAY..i&w=1200&h=552&bih=780&biw=960&q=xbox&ved=0ahUKEwjo2u6MrLjcAhXPxVkKHUmICCMQMwieAigGMAY&iact=mrc&uact=8'
+        photo_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Xbox-console.jpg/1200px-Xbox-console.jpg'
     }
 ])
 

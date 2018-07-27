@@ -16,7 +16,6 @@ button{
     font-size: 2em;
     background-color:lightcoral;
 }
-
 `
 
 export default Slide
