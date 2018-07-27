@@ -10,7 +10,7 @@ class Api::LineItemsController < ApplicationController
         order_id = params[:order_id]
 
         @item = product.line_items.create
-        @item.update!(name: product.name, price: product.price, qty: 1, order_id: order_id)
+        @item.update!(name: product.name, price: product.price, qty: 1, order_id: order_id, photo_url: product.photo_url)
 
         render json: @item
     end

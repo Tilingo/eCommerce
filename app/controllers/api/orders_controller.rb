@@ -11,7 +11,7 @@ class Api::OrdersController < ApplicationController
 
         @order = product.orders.create!(order_params)
         @item = LineItem.last
-        @item.update!(name: product.name, price: product.price, qty: 1)
+        @item.update!(name: product.name, price: product.price, qty: 1, photo_url: product.photo_url)
 
         render json: @order
     end

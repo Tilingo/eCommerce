@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_07_24_163853) do
     t.string "name"
     t.integer "price"
     t.integer "qty"
+    t.string "photo_url"
     t.bigint "order_id"
     t.bigint "product_id"
     t.datetime "created_at", null: false

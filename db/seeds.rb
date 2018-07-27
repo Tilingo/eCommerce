@@ -40,7 +40,8 @@ LineItem.create(
     order_id: orders[0].id, 
     :qty => 1,
     :name => products[0].name,
-    :price => products[0].price
+    :price => products[0].price,
+    :photo_url => products[0].photo_url
 )
 
 LineItem.create(
@@ -48,7 +49,8 @@ LineItem.create(
     order_id: orders[0].id, 
     :qty => 1,
     :name => products[1].name,
-    :price => products[1].price
+    :price => products[1].price,
+    :photo_url => products[1].photo_url
 )
 
 LineItem.create(
@@ -56,7 +58,8 @@ LineItem.create(
     order_id: orders[0].id, 
     :qty => 2,
     :name => products[2].name,
-    :price => products[2].price
+    :price => products[2].price,
+    :photo_url => products[2].photo_url
 )
 
 LineItem.create(
@@ -64,7 +67,8 @@ LineItem.create(
     order_id: orders[1].id, 
     :qty => 5,
     :name => products[2].name,
-    :price => products[2].price
+    :price => products[2].price,
+    :photo_url => products[2].photo_url
 )
 
 LineItem.create(
@@ -72,7 +76,8 @@ LineItem.create(
     order_id: orders[2].id, 
     :qty => 2,
     :name => products[0].name,
-    :price => products[0].price
+    :price => products[0].price,
+    :photo_url => products[0].photo_url
 )
 
 LineItem.create(
@@ -80,7 +85,8 @@ LineItem.create(
     order_id: orders[2].id, 
     :qty => 3,
     :name => products[1].name,
-    :price => products[1].price
+    :price => products[1].price,
+    :photo_url => products[1].photo_url
 )
 
 LineItem.create(
@@ -88,7 +94,8 @@ LineItem.create(
     order_id: orders[2].id, 
     :qty => 1,
     :name => products[2].name,
-    :price => products[2].price
+    :price => products[2].price,
+    :photo_url => products[2].photo_url
 )
 
 puts 'Seeding completed'
