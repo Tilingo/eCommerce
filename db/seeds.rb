@@ -25,13 +25,13 @@ products = Product.create([
 
 orders = Order.create([
     {
-        status: 'OPEN'
+        active: false
     },
     {
-        status: 'CLOSE'
+        active: false
     },
     {
-        status: 'OPEN'
+        active: true
     }
 ])
 

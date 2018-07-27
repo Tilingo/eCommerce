@@ -34,7 +34,7 @@ class Cart extends Component {
                     this.setState({ isPaneOpen: false });
                 } }>
                 <div>
-                    Line Item
+                    Your cart is currently empty.
                 </div>
             </SlidingPane>
         </div>;

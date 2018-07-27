@@ -36,6 +36,7 @@ class SingleProduct extends Component {
                 <div>
                     <h1>{this.state.name}</h1>
                     <p>{this.state.description}</p>
+                    <button onClick={this.props.addToCart} >Add to Cart</button>
                 </div>
             </div>
         );
