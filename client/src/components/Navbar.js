@@ -9,7 +9,8 @@ class Navbar extends Component {
             <div>
                 <Link to="/">HOME</Link>
                 <h3>Store Name</h3>
-                <Cart />
+                <Cart
+                orderId={this.props.orderId} />
             </div>
         )
     }

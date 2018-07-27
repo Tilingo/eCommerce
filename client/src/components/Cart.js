@@ -4,6 +4,7 @@ import SlidingPane from 'react-sliding-pane';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import ItemList from './ItemList';
  
 class Cart extends Component {
 
@@ -28,13 +29,14 @@ class Cart extends Component {
                 overlayClassName='some-custom-overlay-class'
                 isOpen={ this.state.isPaneOpen }
                 title='Cart'
-                width='30vw'
+                width='50vw'
                 onRequestClose={ () => {
                     // triggered on "<" on left top click or on outside click
                     this.setState({ isPaneOpen: false });
                 } }>
                 <div>
-                    Your cart is currently empty.
+                    <ItemList
+                    orderId={this.props.orderId} />
                 </div>
             </SlidingPane>
         </div>;
