@@ -25,7 +25,6 @@ class App extends Component {
       const order_id = order.data.id
 
       const cart = await axios.get(`/api/orders/${order_id}/line_items`)
-      console.log(cart.data)
 
       const newState = {
         cart: cart.data,
@@ -42,15 +41,35 @@ class App extends Component {
     }
   }
 
-  addToCart = async (product_id) => {
+  addToCart = async (product_id, name) => {
     const order_id = this.state.order.orderId
+    const item = this.state.cart.find(obj => {
+      return obj.name === name
+    })
 
     if (this.state.order.active) {
-      try {
-        const res = await axios.post(`/api/products/${product_id}/line_items?order_id=${order_id}`)
-        console.log(res)
-      } catch (err) {
-        console.error(err)
+      if (item == undefined) {
+        try {
+          const res = await axios.post(`/api/products/${product_id}/line_items?order_id=${order_id}`)
+          console.log(res)
+        } catch (err) {
+          console.error(err)
+        }
+      }
+      else {
+        try {
+          let qty = item.qty + 1
+          const payload = { qty }
+
+          const res = await axios.patch(`/api/orders/${order_id}/line_items/${item.id}`, payload)
+          console.log(res)
+
+          const newState = await this.checkOrderStatus()
+          this.setState({ ...newState })
+
+        } catch (err) {
+          console.error(err)
+        }
       }
     }
     else {

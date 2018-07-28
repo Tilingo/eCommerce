@@ -36,7 +36,7 @@ class SingleProduct extends Component {
                 <div>
                     <h1>{this.state.name}</h1>
                     <p>{this.state.description}</p>
-                    <button onClick={() => this.props.addToCart(this.props.match.params.id)} >Add to Cart</button>
+                    <button onClick={() => this.props.addToCart(this.props.match.params.id, this.state.name)} >Add to Cart</button>
                 </div>
             </div>
         );
