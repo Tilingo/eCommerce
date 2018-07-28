@@ -20,14 +20,26 @@ class App extends Component {
   )
 
   checkOrderStatus = async () => {
-    const res = await axios.get('/api/orders/last')
+    try {
+      const order = await axios.get('/api/orders/last')
+      const order_id = order.data.id
 
-    this.setState({
-      order: {
-        orderId: res.data.id,
-        active: res.data.active
+      const cart = await axios.get(`/api/orders/${order_id}/line_items`)
+      console.log(cart.data)
+
+      const newState = {
+        cart: cart.data,
+        order: {
+          orderId: order.data.id,
+          active: order.data.active
+        }
       }
-    })
+
+      return newState
+
+    } catch (err) {
+      console.error(err)
+    }
   }
 
   addToCart = async (product_id) => {
@@ -58,9 +70,11 @@ class App extends Component {
       {...props} />
   )
 
-  componentDidMount() {
-    this.checkOrderStatus()
+  componentDidMount = async () => {
+    const newState = await this.checkOrderStatus()
+    this.setState({ ...newState })
   }
+
 
   render() {
 
