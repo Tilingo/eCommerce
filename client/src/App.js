@@ -4,6 +4,7 @@ import HomeComponent from './components/HomeComponent';
 import Navbar from './components/Navbar';
 import SingleProduct from './components/SingleProduct';
 import axios from 'axios'
+import alertify from 'alertify.js'
 
 class App extends Component {
 
@@ -43,7 +44,7 @@ class App extends Component {
 
   addToCart = async (product_id, name) => {
     await this.checkOrderStatus()
-    
+
     const order_id = this.state.order.orderId
     const item = this.state.cart.find(obj => {
       return obj.name === name
@@ -53,6 +54,7 @@ class App extends Component {
       if (item === undefined) {
         try {
           await axios.post(`/api/products/${product_id}/line_items?order_id=${order_id}`)
+          alertify.success(`Product Added to Cart`)
 
           await this.checkOrderStatus()
 
@@ -66,6 +68,8 @@ class App extends Component {
           const payload = { qty }
 
           await axios.patch(`/api/orders/${order_id}/line_items/${item.id}`, payload)
+          alertify.success(`Product Added to Cart`)
+
 
           await this.checkOrderStatus()
 
@@ -77,7 +81,10 @@ class App extends Component {
     else {
       try {
         await axios.post(`/api/orders?product_id=${product_id}`)
+        alertify.success(`Product Added to Cart`)
+
         await this.checkOrderStatus()
+
 
       } catch (err) {
         console.error(err)

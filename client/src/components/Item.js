@@ -8,7 +8,6 @@ class Item extends Component {
     }
 
     substractOne = async () => {
-
         const order_id = this.props.orderId
         const id = this.props.id
         let qty = this.state.qty
@@ -31,9 +30,6 @@ class Item extends Component {
     }
 
     addOne = () => {
-        this.props.fetchItems()
-
-
         let qty = this.state.qty
         qty += 1
 
