@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import SingleProduct from './components/SingleProduct';
 import axios from 'axios'
 import alertify from 'alertify.js'
+// import { Elements, StripeProvider } from 'react-stripe-elements'
 
 class App extends Component {
 
@@ -117,8 +118,8 @@ class App extends Component {
           </Switch>
         </div>
       </Router>
-    );
+    )
   }
 }
 
-export default App;
+export default App
