@@ -13,7 +13,7 @@ class ItemList extends Component {
 
         try {
             const res = await axios.get(`/api/orders/${order_id}/line_items`)
-            this.setState({ items: res.data })
+            await this.setState({ items: res.data })
         }
         catch (err) {
             console.error(err)
@@ -28,16 +28,25 @@ class ItemList extends Component {
 
         let subtotal = this.state.items.map(item => item.price * item.qty).reduce((a, b) => a + b, 0)
 
-        const items = this.state.items.map((item, i) => {
+        //Sort array of object function found on this link:
+        //https://stackoverflow.com/questions/8900732/javascript-sort-objects-in-an-array-alphabetically-on-one-property-of-the-arra
+        let sorted = this.state.items.sort((a, b) => {
+            let textA = a.name.toUpperCase()
+            let textB = b.name.toUpperCase()
+            return (textA < textB) ? -1 : (textA > textB) ? 1 : 0
+        })
+
+        const items = sorted.map((item, i) => {
             return (
                 <Item
                     key={i}
                     id={item.id}
-                    orderId ={this.props.orderId}
+                    orderId={this.props.orderId}
                     name={item.name}
                     price={item.price}
                     qty={item.qty}
-                    photo_url={item.photo_url} />
+                    photo_url={item.photo_url}
+                    fetchItems={this.fetchItems} />
             )
         })
 

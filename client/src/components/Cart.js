@@ -5,20 +5,21 @@ import 'react-sliding-pane/dist/react-sliding-pane.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import ItemList from './ItemList';
- 
+import axios from 'axios'
+
 class Cart extends Component {
 
     state = {
         isPaneOpen: false
     }
- 
+
     componentDidMount() {
-        Modal.setAppElement(this.el);
+        Modal.setAppElement(this.el)
     }
- 
+
     render() {
 
-    const cartIcon = <FontAwesomeIcon icon={faShoppingCart} size="2x"/>
+        const cartIcon = <FontAwesomeIcon icon={faShoppingCart} size="2x" />
 
         return <div ref={ref => this.el = ref}>
             <button onClick={() => this.setState({ isPaneOpen: true })}>
@@ -27,20 +28,21 @@ class Cart extends Component {
             <SlidingPane
                 className='cart'
                 overlayClassName='some-custom-overlay-class'
-                isOpen={ this.state.isPaneOpen }
-                title='Cart'
+                isOpen={this.state.isPaneOpen}
+                title="Cart"
                 width='50vw'
-                onRequestClose={ () => {
+                onRequestClose={() => {
                     // triggered on "<" on left top click or on outside click
                     this.setState({ isPaneOpen: false });
-                } }>
+                }}>
                 <div>
                     <ItemList
-                    orderId={this.props.orderId} />
+                        updateCart={this.updateCart}
+                        orderId={this.props.orderId} />
                 </div>
             </SlidingPane>
-        </div>;
+        </div>
     }
 }
- 
+
 export default Cart

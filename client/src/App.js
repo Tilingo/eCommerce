@@ -34,7 +34,7 @@ class App extends Component {
         }
       }
 
-      return newState
+      this.setState({ ...newState })
 
     } catch (err) {
       console.error(err)
@@ -42,16 +42,20 @@ class App extends Component {
   }
 
   addToCart = async (product_id, name) => {
+    await this.checkOrderStatus()
+    
     const order_id = this.state.order.orderId
     const item = this.state.cart.find(obj => {
       return obj.name === name
     })
 
     if (this.state.order.active) {
-      if (item == undefined) {
+      if (item === undefined) {
         try {
-          const res = await axios.post(`/api/products/${product_id}/line_items?order_id=${order_id}`)
-          console.log(res)
+          await axios.post(`/api/products/${product_id}/line_items?order_id=${order_id}`)
+
+          await this.checkOrderStatus()
+
         } catch (err) {
           console.error(err)
         }
@@ -61,11 +65,9 @@ class App extends Component {
           let qty = item.qty + 1
           const payload = { qty }
 
-          const res = await axios.patch(`/api/orders/${order_id}/line_items/${item.id}`, payload)
-          console.log(res)
+          await axios.patch(`/api/orders/${order_id}/line_items/${item.id}`, payload)
 
-          const newState = await this.checkOrderStatus()
-          this.setState({ ...newState })
+          await this.checkOrderStatus()
 
         } catch (err) {
           console.error(err)
@@ -74,8 +76,9 @@ class App extends Component {
     }
     else {
       try {
-        const res = await axios.post(`/api/orders?product_id=${product_id}`)
-        console.log(res)
+        await axios.post(`/api/orders?product_id=${product_id}`)
+        await this.checkOrderStatus()
+
       } catch (err) {
         console.error(err)
       }
@@ -89,9 +92,8 @@ class App extends Component {
       {...props} />
   )
 
-  componentDidMount = async () => {
-    const newState = await this.checkOrderStatus()
-    this.setState({ ...newState })
+  componentDidMount() {
+    this.checkOrderStatus()
   }
 
 

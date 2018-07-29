@@ -8,25 +8,37 @@ class Item extends Component {
     }
 
     substractOne = async () => {
+
         const order_id = this.props.orderId
         const id = this.props.id
         let qty = this.state.qty
         qty -= 1
 
-        if (qty == 0) {
-            const res = await axios.delete(`/api/orders/${order_id}/line_items/${id}`)
-            console.log(res)
+        if (qty === 0) {
+            try {
+                await axios.delete(`/api/orders/${order_id}/line_items/${id}`)
+                setTimeout(() => this.props.fetchItems(), 300)
+                await this.props.fetchItems()
+                this.setState({ qty: this.props.qty })
+            } catch (err) {
+                console.error(err)
+            }
         } else {
             this.updateItemQty(qty)
+            setTimeout(() => this.props.fetchItems(), 300)
+            await this.props.fetchItems()
         }
-
     }
 
     addOne = () => {
+        this.props.fetchItems()
+
+
         let qty = this.state.qty
         qty += 1
 
         this.updateItemQty(qty)
+        setTimeout(() => this.props.fetchItems(), 300)
     }
 
     updateItemQty = async (qty) => {
@@ -46,6 +58,7 @@ class Item extends Component {
 
 
     componentDidMount() {
+        // this.fetchItem()
         this.setState({ qty: this.props.qty })
     }
 
@@ -67,7 +80,6 @@ class Item extends Component {
                         <p>{qty}</p>
                         <button onClick={this.addOne}>+</button>
                     </div>
-                    <h3></h3>
                 </div>
             </div>
         )
