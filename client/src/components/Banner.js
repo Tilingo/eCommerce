@@ -6,7 +6,7 @@ class Banner extends Component {
     render() {
         return (
             <StyledBanner>
-                <img src={logos} alt=""/>
+                <img src={logos} alt="" />
             </StyledBanner>
         );
     }

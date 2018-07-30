@@ -4,6 +4,7 @@ import Product from './Product';
 import HomeProductsWrap from './styles/HomeProductsWrap';
 import StyledBanner from './styles/StyledBanner';
 import Banner from './Banner';
+import FeaturedProduct from './FeaturedProduct';
 
 class HomeComponent extends Component {
 
@@ -32,6 +33,7 @@ class HomeComponent extends Component {
 
                 </HomeProductsWrap>
                     <Banner />
+                    <FeaturedProduct />
             </div>
         )
     }
