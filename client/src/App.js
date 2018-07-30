@@ -5,6 +5,8 @@ import SingleProduct from './components/SingleProduct';
 import axios from 'axios'
 import alertify from 'alertify.js'
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import AppWrap from './components/styles/AppWrap';
 
 class App extends Component {
 
@@ -105,19 +107,19 @@ class App extends Component {
     this.checkOrderStatus()
   }
 
-
   render() {
 
     return (
       <Router>
-        <div>
+        <AppWrap>
           <Navbar
             orderId={this.state.order.orderId}/>
           <Switch>
             <Route path="/products/:id" render={this.singleProductComponent} />
             <Route exact path="/" render={this.homeComponent} />
           </Switch>
-        </div>
+          <Footer />
+        </AppWrap>
       </Router>
     )
   }
