@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import SlideShow from './SlideShow';
 import Product from './Product';
 import HomeProductsWrap from './styles/HomeProductsWrap';
+import StyledBanner from './styles/StyledBanner';
+import Banner from './Banner';
 
 class HomeComponent extends Component {
 
@@ -27,7 +29,9 @@ class HomeComponent extends Component {
                             </div>}
                         src="https://images.unsplash.com/photo-1528979180541-5ad1423e5852?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6f0584581f121c30fb7559d2b0b44d4d&auto=format&fit=crop&w=1500&q=80" />
 
+
                 </HomeProductsWrap>
+                    <Banner />
             </div>
         )
     }
