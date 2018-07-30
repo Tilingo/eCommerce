@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomeComponent from './components/HomeComponent';
-import Navbar from './components/Navbar';
 import SingleProduct from './components/SingleProduct';
 import axios from 'axios'
 import alertify from 'alertify.js'
-// import { Elements, StripeProvider } from 'react-stripe-elements'
+import BootNavbar from './components/Navbar';
 
 class App extends Component {
 
@@ -110,7 +109,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Navbar
+          <BootNavbar
             orderId={this.state.order.orderId} />
           <Switch>
             <Route exact path="/" render={this.homeComponent} />
