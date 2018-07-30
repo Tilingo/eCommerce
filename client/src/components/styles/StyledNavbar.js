@@ -3,13 +3,14 @@ import styled from 'styled-components'
 const StyledNavbar = styled.div`
 padding: 0 5% 0 5%;
 margin: 0;
-height: 10vh;
+height: 10.5vh;
 display: flex;
 align-items: center;
 justify-content: space-between;
 background-color: black;
 font-family: 'Pacifico', cursive;
 color: white;
+
 
 h1{
     font-family: 'Pacifico', cursive;
@@ -26,6 +27,7 @@ a{
 
     &:hover{
         text-decoration: underline;
+        color: #00C8F0;
     }
 }
 

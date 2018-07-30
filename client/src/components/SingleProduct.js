@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 class SingleProduct extends Component {
 
@@ -26,6 +27,12 @@ class SingleProduct extends Component {
 
     componentDidMount() {
         this.fetchProduct()
+    }
+
+    componentDidUpdate(prevProps){
+        if (this.props.match.params.id !== prevProps.match.params.id){
+            this.fetchProduct()
+        }
     }
 
     render() {

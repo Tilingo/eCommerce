@@ -4,7 +4,7 @@ import HomeComponent from './components/HomeComponent';
 import SingleProduct from './components/SingleProduct';
 import axios from 'axios'
 import alertify from 'alertify.js'
-import BootNavbar from './components/Navbar';
+import Navbar from './components/Navbar';
 
 class App extends Component {
 
@@ -15,6 +15,8 @@ class App extends Component {
       active: false
     }
   }
+
+ 
 
   homeComponent = (props) => (
     <HomeComponent {...props} />
@@ -109,11 +111,11 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <BootNavbar
-            orderId={this.state.order.orderId} />
+          <Navbar
+            orderId={this.state.order.orderId}/>
           <Switch>
-            <Route exact path="/" render={this.homeComponent} />
             <Route path="/products/:id" render={this.singleProductComponent} />
+            <Route exact path="/" render={this.homeComponent} />
           </Switch>
         </div>
       </Router>

@@ -31,7 +31,7 @@ class Cart extends Component {
                 overlayClassName='some-custom-overlay-class'
                 isOpen={this.state.isPaneOpen}
                 title="Cart"
-                width='50vw'
+                width='30vw'
                 onRequestClose={() => {
                     // triggered on "<" on left top click or on outside click
                     this.setState({ isPaneOpen: false });

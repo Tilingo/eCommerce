@@ -1,41 +1,49 @@
 import React, { Component } from 'react'
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import Cart from './Cart'
-// import StyledNavbar from './styles/StyledNavbar';
+import StyledNavbar from './styles/StyledNavbar';
+import NavButtonsWrap from './styles/NavButtonsWrap';
+import ProductList from './DropDown';
+import axios from 'axios'
 
-class BootNavbar extends Component {
+class Navbar extends Component {
+
+    state ={
+        products: []
+    }
+
+    fetchProducts = async () => {
+        try {
+            const res = await axios.get(`/api/products`)
+            this.setState({ products: res.data })
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
+    componentDidMount(){
+        this.fetchProducts()
+        console.log("NAVBAR mounted")
+    }
+    
     render() {
-
+        console.log("NAVBAR updated")
         return (
-            <Navbar inverse collapseOnSelect>
-                <Navbar.Header>
-                    <Navbar.Brand>
-                        <h1>Boomerang Barrier</h1>
-                    </Navbar.Brand>
-                    <Navbar.Toggle />
-                </Navbar.Header>
-                <Navbar.Collapse>
-                    <Nav pullRight>
-                        <NavItem eventKey={1} href="#">
-                            <Link to="/">HOME</Link>
-                        </NavItem>
-                        <NavItem eventKey={2} href="#">
-                            <Cart
-                                orderId={this.props.orderId} />
-                        </NavItem>
-                    </Nav>
+            <StyledNavbar>
 
-                </Navbar.Collapse>
-            </Navbar>
-            // <StyledNavbar>
-            //     <Link to="/">HOME</Link>
-            //     <h1>Boomerang Barrier</h1>
-            // <Cart
-            // orderId={this.props.orderId} />
-            // </StyledNavbar>
+                <h1>Boomerang Barrier</h1>
+
+                <NavButtonsWrap>
+                    <Link to="/">HOME</Link>
+                    <ProductList
+                    products={this.state.products} />
+                    <Cart
+                        orderId={this.props.orderId} />
+                </NavButtonsWrap>
+
+            </StyledNavbar>
         )
     }
 }
 
-export default BootNavbar
+export default Navbar
