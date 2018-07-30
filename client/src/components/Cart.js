@@ -5,8 +5,8 @@ import 'react-sliding-pane/dist/react-sliding-pane.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import ItemList from './ItemList';
+import CheckoutForm from './CheckoutForm'
 import axios from 'axios'
-import CheckoutModal from './CheckoutModal';
 
 class Cart extends Component {
 
@@ -40,7 +40,9 @@ class Cart extends Component {
                     <ItemList
                         updateCart={this.updateCart}
                         orderId={this.props.orderId} />
-                    <CheckoutModal />
+
+                    <CheckoutForm />
+
                 </div>
             </SlidingPane>
         </div>
