@@ -22,18 +22,21 @@ div{
         text-shadow: 1px 1px black;
         margin: 0;
     }
+    h1{
+        margin-bottom: 30px;
+    }
 }
 
 @media screen and (max-width: 600px){
     background-position: 50% 100%;
     div{
-        margin: 20px 0 0 0;
+        margin: 18px 0 0 0;
         text-align: center;
         h2{
             font-size: 2.3em;   
         }
         h1{
-            margin: 0;
+            margin: 0 0 20px 0;
         }
     }
 }

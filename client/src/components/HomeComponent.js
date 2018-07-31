@@ -20,7 +20,7 @@ class HomeComponent extends Component {
                         child={
                             <FirstProduct>
                                 <div>
-                                    <h2>Diana Insta Square</h2>
+                                    <h2>Diana Instant Square</h2>
                                     <LearnMore id='1' />
                                 </div>
                             </FirstProduct>}

@@ -18,9 +18,31 @@ button.StripeCheckout {
   margin-top: 20px;
 }
 
+.link {
+  color: #DF440D;
+  background-color: #00C8F0;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: solid;
+  padding: 3% 6%;
+  text-shadow: -1px 1px black;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: #00C8F0;
+  background-color: #DF440D;
+  -webkit-box-shadow: -4px 2px 5px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: -4px 2px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
 @media screen and (max-width: 600px) {
   .some-custom-class {
     width: 100vw !important;
+  }
+  .link {
+    font-size: 1em;
+    padding: 2% 4%;
   }
 }
 

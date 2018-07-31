@@ -5,7 +5,7 @@ class Footer extends Component {
     render() {
         return (
             <StyledFooter>
-                <h1>Footer</h1>
+                <h3>Developed by Nestor Mendoza</h3>
             </StyledFooter>
         );
     }

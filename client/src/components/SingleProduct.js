@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import {Link} from 'react-router-dom'
+import StyledSingleProduct from './styles/StyledSingleProduct';
 
 class SingleProduct extends Component {
 
     state = {
         name: '',
         img: '',
-        description: ''
+        description: '',
+        price: 0
     }
 
     fetchProduct = async () => {
@@ -17,7 +18,8 @@ class SingleProduct extends Component {
             await this.setState({
                 name: res.data.name,
                 img: res.data.photo_url,
-                description: res.data.description
+                description: res.data.description,
+                price: res.data.price
             })
         }
         catch (err) {
@@ -29,8 +31,8 @@ class SingleProduct extends Component {
         this.fetchProduct()
     }
 
-    componentDidUpdate(prevProps){
-        if (this.props.match.params.id !== prevProps.match.params.id){
+    componentDidUpdate(prevProps) {
+        if (this.props.match.params.id !== prevProps.match.params.id) {
             this.fetchProduct()
         }
     }
@@ -38,14 +40,20 @@ class SingleProduct extends Component {
     render() {
 
         return (
-            <div>
+            <StyledSingleProduct>
+
                 <img src={this.state.img} alt={this.state.name} />
+
                 <div>
                     <h1>{this.state.name}</h1>
                     <p>{this.state.description}</p>
-                    <button onClick={() => this.props.addToCart(this.props.match.params.id, this.state.name)} >Add to Cart</button>
+                    <h2>$ {this.state.price}</h2>
+                    <button onClick={() => this.props.addToCart(this.props.match.params.id, this.state.name)} className="link" >
+                        Add to Cart
+                    </button>
                 </div>
-            </div>
+
+            </StyledSingleProduct>
         );
     }
 }
