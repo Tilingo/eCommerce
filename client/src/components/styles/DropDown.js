@@ -29,7 +29,7 @@ div{
     display: none;
     padding: 10%;
     border: 2px solid;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: black;
     border-radius: 5px;
     width: 200px;
     justify-content: center;

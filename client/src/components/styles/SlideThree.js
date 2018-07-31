@@ -1,25 +1,27 @@
 import styled from 'styled-components'
 
-const Slide = styled.div`
+const SlideThree = styled.div`
 display: flex;
-justify-content: flex-end;
+justify-content: flex-start;
 width: 100vw;
 height: 90vh;
 padding: 0;
-background-image: url('https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4910c787e5c5a31049583e85aa109c80&auto=format&fit=crop&w=1050&q=80');
+background-image: url('https://images.unsplash.com/photo-1523053537371-688443deef0d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cb01eb03e251b486e9fc3638479b5fef&auto=format&fit=crop&w=1500&q=80');
 background-size: cover;
 background-position: center;
 
 div{
     display: flex;
-    justify-content: center;
+    width: 50vw;
+    /* line-height: 1.1; */
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    margin: 3% 5% 0 0;
+    margin: 5% 0% 0 2%;
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid #DF440D;
-    height: 15vh;
-    padding: 1%;
+    height: 25vh;
+    /* padding: 1%; */
     border-radius: 5px;
     box-shadow: -8px 11px 5px 0px rgba(0,0,0,0.75);
 
@@ -35,9 +37,8 @@ div{
 
 h1 {
     /* margin: 0; */
+    font-size: 3em;
     color: black;
-    font-size: 2.5em;
-
 }
 
 @media screen and (max-width: 600px){
@@ -65,4 +66,4 @@ h1 {
 }
 `
 
-export default Slide
+export default SlideThree
