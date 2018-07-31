@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Item from './Item';
 import axios from 'axios'
+import StyledSubtotal from './styles/StyledSubtotal';
 
 class ItemList extends Component {
 
@@ -54,7 +55,10 @@ class ItemList extends Component {
             <div>
                 {items}
                 <hr />
-                <h3>Subtotal ${subtotal}</h3>
+                <StyledSubtotal>
+                    <h2>Subtotal</h2>
+                    <h3>${subtotal}</h3>
+                </StyledSubtotal>
             </div>
         );
     }
