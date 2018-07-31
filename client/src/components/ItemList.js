@@ -54,7 +54,7 @@ class ItemList extends Component {
             <div>
                 {items}
                 <hr />
-                <h1>Subtotal: ${subtotal}</h1>
+                <h3>Subtotal ${subtotal}</h3>
             </div>
         );
     }

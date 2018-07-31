@@ -27,7 +27,7 @@ class Cart extends Component {
                 {cartIcon}
             </button>
             <SlidingPane
-                className='cart'
+                className='some-custom-class'
                 overlayClassName='some-custom-overlay-class'
                 isOpen={this.state.isPaneOpen}
                 title="Cart"

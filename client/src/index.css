@@ -3,4 +3,16 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+@media screen and (max-width: 600px) {
+  .some-custom-class {
+    width: 100vw !important;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+  .some-custom-class {
+    width: 60vw !important;
+  }
+}
 /*# sourceMappingURL=index.css.map */

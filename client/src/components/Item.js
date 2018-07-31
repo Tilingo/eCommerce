@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import CartItemCard from './styles/CartItemCard';
+import ItemCardNameAndPrice from './styles/ItemCardNameAndPrice';
+import ItemCardPriceAndQty from './styles/ItemCardPriceAndQty';
+import CartItemQty from './styles/CartItemQty';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 class Item extends Component {
 
@@ -65,19 +71,32 @@ class Item extends Component {
 
         let itemTotal = price * qty
 
+        const minus = <FontAwesomeIcon icon={faMinus} size="1x" />
+        const plus = <FontAwesomeIcon icon={faPlus} size="1x" />
+
         return (
-            <div>
+            <CartItemCard>
+
                 <img src={this.props.photo_url} alt={this.props.name} />
-                <div>
-                    <h2>{this.props.name}</h2>
-                    <p>${itemTotal}</p>
-                    <div>
-                        <button onClick={this.substractOne}>-</button>
-                        <p>{qty}</p>
-                        <button onClick={this.addOne}>+</button>
-                    </div>
-                </div>
-            </div>
+
+                <ItemCardNameAndPrice>
+
+                    <h3>{this.props.name}</h3>
+
+                    <ItemCardPriceAndQty>
+
+                        <CartItemQty>
+                            <button onClick={this.substractOne}>{minus}</button>
+                            <p>{qty}</p>
+                            <button onClick={this.addOne}>{plus}</button>
+                        </CartItemQty>
+
+                        <h4>${itemTotal}</h4>
+                    </ItemCardPriceAndQty>
+
+                </ItemCardNameAndPrice>
+
+            </CartItemCard>
         )
     }
 }
