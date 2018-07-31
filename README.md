@@ -44,15 +44,15 @@ This store is not real, and the products are not actually on sale. So please don
 * Edit Products
 * Update Products
 * Delete Products
-* Proces Payments
-.
+* Process Payments
+
 <details>
 <summary>Wireframe</summary>
 <br>
 
-![Image of Wireframe](https://github.com/Tilingo/eShopper/blob/master/public/images/wireframe1.jpg)
+![Image of Wireframe](https://github.com/Tilingo/eCommerce/blob/master/client/public/wireframe2.jpg)
 
-![Image of Wireframe](https://github.com/Tilingo/eShopper/blob/master/public/images/wireframe2.jpg)
+![Image of Wireframe](https://github.com/Tilingo/eCommerce/blob/master/client/public/wireframe1.jpg)
 
 </details>
 
@@ -60,7 +60,7 @@ This store is not real, and the products are not actually on sale. So please don
 <summary>ERD</summary>
 <br>
 
-![Image of ERD](https://github.com/Tilingo/eShopper/blob/master/public/images/ERD.jpg)
+![Image of ERD](https://github.com/Tilingo/eCommerce/blob/master/client/public/ERD.pdf)
 
 </details>
 

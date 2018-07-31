@@ -4,7 +4,8 @@ const StyledProduct = styled.div`
 border: solid;
 width: 50vw;
 overflow: hidden;
-height:60vh;
+max-height: 475px;
+/* height:60vh; */
 
 @media screen and (max-width: 600px){
     width: 100vw; 

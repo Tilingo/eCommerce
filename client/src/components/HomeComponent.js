@@ -5,6 +5,7 @@ import HomeProductsWrap from './styles/HomeProductsWrap';
 import Banner from './Banner';
 import FeaturedProduct from './FeaturedProduct';
 import LearnMore from './LearnMore';
+import FirstProduct from './styles/FristProduct';
 
 class HomeComponent extends Component {
 
@@ -16,10 +17,12 @@ class HomeComponent extends Component {
 
                     <Product move="move"
                         child={
-                            <div>
-                                <h1>This is first cool</h1>
-                                <LearnMore id='1' />
-                            </div>}
+                            <FirstProduct>
+                                <div>
+                                    <h2>Diana Insta Square</h2>
+                                    <LearnMore id='1' />
+                                </div>
+                            </FirstProduct>}
                         src="https://images.unsplash.com/photo-1522100077728-4fae00f560c8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8701578bec61bcb857957c601df59fc0&auto=format&fit=crop&w=981&q=80" />
 
                     <Product move="move right"
@@ -32,8 +35,8 @@ class HomeComponent extends Component {
 
 
                 </HomeProductsWrap>
-                    <Banner />
-                    <FeaturedProduct />
+                <Banner />
+                <FeaturedProduct />
             </div>
         )
     }
