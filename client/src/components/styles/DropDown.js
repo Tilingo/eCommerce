@@ -28,6 +28,9 @@ button{
     cursor: pointer;
     font-weight: bold;
     color: #EAC435;
+    display: flex;
+    align-items: center;
+    padding: 0;
 
     &:focus{
         outline: none;

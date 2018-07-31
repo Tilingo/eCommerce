@@ -8,7 +8,7 @@ import axios from 'axios'
 
 class Navbar extends Component {
 
-    state ={
+    state = {
         products: []
     }
 
@@ -21,11 +21,11 @@ class Navbar extends Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.fetchProducts()
         console.log("NAVBAR mounted")
     }
-    
+
     render() {
         console.log("NAVBAR updated")
         return (
@@ -36,7 +36,7 @@ class Navbar extends Component {
                 <NavButtonsWrap>
                     <Link to="/">HOME</Link>
                     <ProductList
-                    products={this.state.products} />
+                        products={this.state.products} />
                     <Cart
                         orderId={this.props.orderId} />
                 </NavButtonsWrap>
