@@ -12,6 +12,10 @@ img{
     padding: 1% 2%;
     width: 100vw;
 }
+
+@media screen and (max-width: 600px){
+    height: 15vh;
+}
 `
 
 export default StyledBanner

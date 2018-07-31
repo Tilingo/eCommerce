@@ -12,7 +12,6 @@ background-color: black;
 font-family: 'Pacifico', cursive;
 color: white;
 
-
 h1{
     font-family: 'Pacifico', cursive;
     color: #DF440D;
@@ -81,7 +80,6 @@ button{
         }
     }
 }
-
 `
 
 export default StyledNavbar
