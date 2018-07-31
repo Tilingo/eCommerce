@@ -6,6 +6,7 @@ import Banner from './Banner';
 import FeaturedProduct from './FeaturedProduct';
 import LearnMore from './LearnMore';
 import FirstProduct from './styles/FristProduct';
+import SecondProduct from './styles/SecondProduct';
 
 class HomeComponent extends Component {
 
@@ -27,10 +28,12 @@ class HomeComponent extends Component {
 
                     <Product move="move right"
                         child={
-                            <div>
-                                <h1>This is second cool</h1>
-                                <LearnMore id='2' />
-                            </div>}
+                            <SecondProduct>
+                                <div>
+                                    <h2>The Keyboard Waffle Iron</h2>
+                                    <LearnMore id='2' />
+                                </div>
+                            </SecondProduct>}
                         src="https://images.unsplash.com/photo-1528979180541-5ad1423e5852?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6f0584581f121c30fb7559d2b0b44d4d&auto=format&fit=crop&w=1500&q=80" />
 
 

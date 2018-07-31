@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 
-const FirstProduct = styled.div`
+const SecondProduct = styled.div`
 border: solid;
 height: 475px;
 width: 50vw;
 display: flex;
 justify-content: flex-start;
-align-items: flex-start;
+align-items: flex-end;
 flex-direction: column;
-background-image: url('https://microsites.lomography.com/diana/images/instant-sq.png?1529500677');
+background-image: url('https://www.thinkgeek.com/images/products/zoom/jmmi_the_keyboard_waffle_iron.jpg');
 background-position: center;
 background-color: #000000;
-background-size: contain;
+background-size: cover;
 background-repeat: no-repeat;
 
 div{
@@ -19,14 +19,14 @@ div{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
-    margin: 25px 0 0 25px;
+    align-items: flex-end;
+    margin: 10px 20px 0 0;
 
     h2{
         font-family: 'Pacifico', cursive;
         color: #DF440D;
         font-size: 2em;
-        text-shadow: 0.5px 0.5px white
+        text-shadow: 1px 1px black
     }
 }
 
@@ -36,4 +36,4 @@ div{
 }
 `
 
-export default FirstProduct
+export default SecondProduct
