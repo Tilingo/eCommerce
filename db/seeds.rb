@@ -12,7 +12,7 @@ products = Product.create([
     {
         name: 'The Keyboard Waffle Iron',
         description: 'Using The Keyboard Waffle Iron is incredibly easy and makes a delicious waffle in just 5 minutes: 1. Prep: pre-heat The Keyboard Waffle Iron on any stove, grill, or other cooking surface. Coat lightly with a non-stick cooking spray. 2. Pour: add in your favorite batter recipe (or use a boxed pancake mix). Close the lid and allow the batter to cook for 2-3 minutes. 3. Flip: flip The Keyboard Waffle Iron over to cook the other side for an additional 1-2 minutes. 4. EAT!',
-        price: 299,
+        price: 69,
         photo_url: 'https://www.thinkgeek.com/images/products/zoom/jmmi_the_keyboard_waffle_iron.jpg'
     },
     {
