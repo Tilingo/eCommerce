@@ -27,7 +27,6 @@ a{
     cursor: pointer;
 
     &:hover{
-        text-decoration: underline;
         color: #00C8F0;
     }
 }
@@ -37,7 +36,7 @@ button{
     font-size: 1.2vw;
     border: none;
     cursor: pointer;
-    padding: 0 0 5px 0;
+    padding: 0;
 
     &:focus{
         outline: none;
@@ -60,10 +59,26 @@ button{
 
     a{
         font-size: 3vw;
+
+        &:hover{
+            color: #EAC435;
+        }
+
+        &:active{
+            color: #00C8F0;
+        }
     }
 
     button{
         font-size: 3vw;
+
+        &:hover{
+            color: #EAC435;
+        }
+
+        &:active{
+            color: #00C8F0;
+        }
     }
 }
 

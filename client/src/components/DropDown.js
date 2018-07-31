@@ -1,25 +1,14 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
 import StyledDropDown from './styles/DropDown';
-
-// import { friendOptions } from '../common'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStore } from '@fortawesome/free-solid-svg-icons'
 
 class ProductList extends Component {
 
-    state ={
-        products: []
-    }
-
-
-    componentDidMount() {
-        // this.setState({
-        //     products: this.props.products
-        // })
-        console.log('DROPDOWN mounted')
-    }
-
     render() {
+
+        const store = <FontAwesomeIcon icon={faStore} size="2x" />
 
         const products = this.props.products.map((product) => {
             return (
@@ -30,7 +19,7 @@ class ProductList extends Component {
         console.log("DROPDOWN updated")
         return (
             <StyledDropDown>
-                <button>PRODUCTS</button>
+                <button>{store}</button>
                 <div>
                     {products}
                 </div>

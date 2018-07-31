@@ -60,7 +60,6 @@ class Item extends Component {
 
 
     componentDidMount() {
-        // this.fetchItem()
         this.setState({ qty: this.props.qty })
     }
 

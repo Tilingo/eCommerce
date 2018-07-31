@@ -5,6 +5,8 @@ import StyledNavbar from './styles/StyledNavbar';
 import NavButtonsWrap from './styles/NavButtonsWrap';
 import ProductList from './DropDown';
 import axios from 'axios'
+import { FontAwesomeIcon, faStore } from '@fortawesome/react-fontawesome'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 
 class Navbar extends Component {
 
@@ -23,18 +25,20 @@ class Navbar extends Component {
 
     componentDidMount() {
         this.fetchProducts()
-        console.log("NAVBAR mounted")
+
     }
 
     render() {
-        console.log("NAVBAR updated")
+
+        const home = <FontAwesomeIcon icon={faHome} size="2x" />
+
         return (
             <StyledNavbar>
 
                 <h1>Boomerang Barrier</h1>
 
                 <NavButtonsWrap>
-                    <Link to="/">HOME</Link>
+                    <Link to="/">{home}</Link>
                     <ProductList
                         products={this.state.products} />
                     <Cart

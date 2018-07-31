@@ -8,25 +8,13 @@ position: relative;
 
 &:hover div{
     display: flex;
-    left: 10px;
-    top: 30px;
-    padding: 5%;
-    border: solid;
-    width: inherit;
-    justify-content: center;
-    flex-direction: column;
-    position: absolute;
-    line-height: 1.5;
-    z-index: 1;
-    font-size: 0.5em;
-    }
+
+}
 
 button{
-    font-family: 'Pacifico', cursive;
     background: transparent;
     border: none;
     cursor: pointer;
-    font-weight: bold;
     color: #EAC435;
     display: flex;
     align-items: center;
@@ -39,6 +27,30 @@ button{
 }
 div{
     display: none;
+    padding: 10%;
+    border: 2px solid;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    width: 200px;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 1px;
+    right: 0;
+    line-height: 1.7;
+    z-index: 1;
+
+    a{
+        font-size: 1.1em;
+        color: #DF440D;
+
+    }
+}
+
+@media screen and (max-width: 600px){
+    div{
+        margin-top: 15px;
+    }
 }
 `
 
