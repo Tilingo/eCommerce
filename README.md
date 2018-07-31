@@ -17,7 +17,7 @@ The Stripe API is in charge of processing the payments. Currently, this version 
 This store is not real, and the products are not actually on sale. So please don't try to use your credit card (Nothing, will happen, and the info is encrypted but is still not a good idea).
 
 
-### [Live eShopper site](https://https://ecommerce-react-rails.herokuapp.com/)
+### [Live eShopper site](https://ecommerce-react-rails.herokuapp.com/)
 
 ## Technologies Used
 
